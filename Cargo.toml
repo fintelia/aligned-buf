@@ -1,0 +1,10 @@
+[package]
+name = "aligned-buf"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jonathan Behrens <fintelia@gmail.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/fintelia/aligned-buf"
+
+[dependencies]
+bytemuck = "1.12.1"

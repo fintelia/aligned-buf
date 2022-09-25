@@ -15,9 +15,9 @@ impl AlignedBuf {
         self.len
     }
     pub fn as_slice<T: bytemuck::AnyBitPattern>(&self) -> &[T] {
-        &bytemuck::cast_slice(&self.inner)[..self.len]
+        &bytemuck::cast_slice(&self.inner)[..self.len / std::mem::size_of::<T>()]
     }
     pub fn as_slice_mut<T: bytemuck::NoUninit + bytemuck::AnyBitPattern>(&mut self) -> &mut [T] {
-        &mut bytemuck::cast_slice_mut(&mut self.inner)[..self.len]
+        &mut bytemuck::cast_slice_mut(&mut self.inner)[..self.len / std::mem::size_of::<T>()]
     }
 }
